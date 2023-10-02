@@ -1,0 +1,353 @@
+{
+  "attributes": {
+    "categories": [
+      {"id": 0, "label": {"pt-BR": "Artes & Design", "en-US": "Arts & Design"}},
+      {"id": 1, "label": {"pt-BR": "Autocuidado", "en-US": "Self-Care"}},
+      {"id": 2, "label": {"pt-BR": "Criatividade", "en-US": "Creativity"}},
+      {"id": 3, "label": {"pt-BR": "Dança ", "en-US": "Dance"}},
+      {"id": 4, "label": {"pt-BR": "Escrita", "en-US": "Writing"}},
+      {"id": 5, "label": {"pt-BR": "Esportes", "en-US": "Sports"}},
+      {"id": 6, "label": {"pt-BR": "Filmes & Séries", "en-US": "Movies & Series"}},
+      {"id": 7, "label": {"pt-BR": "Jogos Eletrônicos", "en-US": "Videogames"}},
+      {"id": 8, "label": {"pt-BR": "Lazer e Turismo", "en-US": "Leisure and Tourism"}},
+      {"id": 9, "label": {"pt-BR": "Livros", "en-US": "Books"}},
+      {"id": 10, "label": {"pt-BR": "Maquiagem ", "en-US": "Makeup"}},
+      {"id": 11, "label": {"pt-BR": "Moda", "en-US": "Fashion"}},
+      {"id": 12, "label": {"pt-BR": "Música", "en-US": "Music"}},
+      {"id": 13, "label": {"pt-BR": "Animais", "en-US": "Animals"}},
+      {"id": 14, "label": {"pt-BR": "Rotina", "en-US": "Routine"}},
+      {"id": 15, "label": {"pt-BR": "Vlogs Diários", "en-US": "Daily Vlogs"}}
+    ],
+    "genders": [
+      {"id": 0, "label": {"pt-BR": "Masculino", "en-US": "Male"}},
+      {"id": 1, "label": {"pt-BR": "Feminino", "en-US": "Female"}},
+      {"id": 2, "label": {"pt-BR": "Não-Binário", "en-US": "Non-Binary "}},
+      {"id": 3, "label": {"pt-BR": "Pets", "en-US": "Pets"}}
+    ],
+    "regions": [
+      {"id": 0, "label": {"pt-BR": "São Paulo", "en-US": "Sao Paulo"}}
+    ]
+  },
+  "hashtags": [
+    {"tag": "skincare", "categories": [0]},
+    {"tag": "maquiagem", "categories": [0]},
+    {"tag": "grwm", "categories": [0]},
+    {"tag": "treino", "categories": [1]},
+    {"tag": "receitafit", "categories": [1]},
+    {"tag": "whey", "categories": [1]}
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "desfrutando.vida@test.com",
+      "raw_password": "00000000"
+    },
+    {
+      "id": 2,
+      "email": "tscarmo@test.com",
+      "raw_password": "00000001"
+    },
+    {
+      "id": 3,
+      "email": "colocanalista_@test.com",
+      "raw_password": "00000002"
+    },
+    {
+      "id": 4,
+      "email": "acazo33@test.com",
+      "raw_password": "00000003"
+    },
+    {
+      "id": 5,
+      "email": "arisegatto@test.com",
+      "raw_password": "00000004"
+    },
+    {
+      "id": 6,
+      "email": "amandafavoreto@test.com",
+      "raw_password": "00000005"
+    },
+    {
+      "id": 7,
+      "email": "jaquelinezaninif@test.com",
+      "raw_password": "00000006"
+    },
+    {
+      "id": 8,
+      "email": "gaelejose@test.com",
+      "raw_password": "00000007"
+    },
+    {
+      "id": 9,
+      "email": "isacsiqeira@test.com",
+      "raw_password": "00000008"
+    },
+    {
+      "id": 10,
+      "email": "anabeatriz.guedes@test.com",
+      "raw_password": "00000009"
+    },
+    {
+      "id": 11,
+      "email": "bruna_thomasi@test.com",
+      "raw_password": "00000010"
+    },
+    {
+      "id": 12,
+      "email": "luanaamy_02@test.com",
+      "raw_password": "00000011"
+    },
+    {
+      "id": 13,
+      "email": "angelam.artecomoterapia@test.com",
+      "raw_password": "00000012"
+    },
+    {
+      "id": 14,
+      "email": "dividindoleituras_@test.com",
+      "raw_password": "00000013"
+    }
+  ],
+  "brands": [
+    {
+      "username": "natura",
+      "name": "Natura",
+      "interests": {
+        "categories": [0]
+      }
+    },
+    {
+      "username": "sallve",
+      "name": "Sallve",
+      "interests": {
+        "categories": [0]
+      }
+    },
+    {
+      "username": "milkybar",
+      "name": "Milky Bar",
+      "interests": {
+        "categories": [1]
+      }
+    },
+    {
+      "username": "whey",
+      "name": "Whey Protein",
+      "interests": {
+        "categories": [1]
+      }
+    }
+  ],
+  "creators": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "username": "desfrutando.vida",
+      "personal_info": {
+        "full_name": "Maria Clara",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [1, 14],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "desfrutando.vida"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "username": "tscarmo",
+      "personal_info": {
+        "full_name": "Thais",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [0, 2],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "tscarmo"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "username": "colocanalista_",
+      "personal_info": {
+        "full_name": "Coloca na Lista",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [8],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "colocanalista_"
+    },
+    {
+      "id": 4,
+      "user_id": 4,
+      "username": "acazo33",
+      "personal_info": {
+        "full_name": "Acazo",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [0, 2],
+        "gender_id": 0,
+        "region_id": 0
+      },
+      "tiktok_username": "acazo33"
+    },
+    {
+      "id": 5,
+      "user_id": 5,
+      "username": "arisegatto",
+      "personal_info": {
+        "full_name": "Ari Segatto",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [0, 2],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "arisegatto"
+    },
+    {
+      "id": 6,
+      "user_id": 6,
+      "username": "amandafavoreto",
+      "personal_info": {
+        "full_name": "Amanda Favoreto",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [11, 15],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "amandafavoreto"
+    },
+    {
+      "id": 7,
+      "user_id": 7,
+      "username": "jaquelinezaninif",
+      "personal_info": {
+        "full_name": "Jaqueline Zanini",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [0, 2],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "jaquelinezaninif"
+    },
+    {
+      "id": 8,
+      "user_id": 8,
+      "username": "gaelejose",
+      "personal_info": {
+        "full_name": "Gael e José",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [13],
+        "gender_id": 3,
+        "region_id": 0
+      },
+      "tiktok_username": "gaelejose"
+    },
+    {
+      "id": 9,
+      "user_id": 9,
+      "username": "isacsiqeira",
+      "personal_info": {
+        "full_name": "Isabella Cabral Siqu",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [0, 2, 15],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "isacsiqeira"
+    },
+    {
+      "id": 10,
+      "user_id": 10,
+      "username": "anabeatriz.guedes",
+      "personal_info": {
+        "full_name": "Ana Beatriz",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [11],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "anabeatriz.guedes"
+    },
+    {
+      "id": 11,
+      "user_id": 11,
+      "username": "bruna_thomasi",
+      "personal_info": {
+        "full_name": "Bruna Thomasi",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [10, 11],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "bruna_thomasi"
+    },
+    {
+      "id": 12,
+      "user_id": 12,
+      "username": "luanaamy_02",
+      "personal_info": {
+        "full_name": "Luana Amy",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [10, 11, 15],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "luanaamy_02"
+    },
+    {
+      "id": 13,
+      "user_id": 13,
+      "username": "angelam.artecomoterapia",
+      "personal_info": {
+        "full_name": "Angela M.",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [0, 2],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "angelam.artecomoterapia"
+    },
+    {
+      "id": 14,
+      "user_id": 14,
+      "username": "dividindoleituras_",
+      "personal_info": {
+        "full_name": "Kaw :)",
+        "birth_date": "1999-09-09"
+      },
+      "attributes": {
+        "category_ids": [1, 9],
+        "gender_id": 1,
+        "region_id": 0
+      },
+      "tiktok_username": "dividindoleituras_"
+    }
+  ]
+}

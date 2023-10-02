@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  api:
+    image: "${API_IMAGE}:${API_VERSION}"
+    build:
+      context: "./"
+      args:
+        API_WORKDIR: "${DOCKER_WORKDIR}"
+        API_USER: "${DOCKER_USER}"
+        API_UID: "${DOCKER_UID}"
+        API_GID: "${DOCKER_GID}"
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    volumes:
+      - "./:${DOCKER_WORKDIR}"
+      - "${DOCKER_WORKDIR}/.venv"
+    env_file:
+      - ".env"
+

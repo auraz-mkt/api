@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "auraz"
+version = "0.1.0"
+description = "Auraz API"
+authors = ["Auraz Development <auraz.mkt+dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+uvicorn = "^0.26.0"
+sqids = "^0.4.1"
+aiohttp = { extras = ["speedups"], version = "^3.9.1" }
+pydantic-settings = "^2.1.0"
+async-lru = "^2.0.4"
+regex = "^2023.12.25"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.7.0"
+types-regex = "^2023.10.3.0"
+ruff = "^0.1.8"
+ruff-lsp = "^0.0.48"
+
+[tool.mypy]
+plugins = "pydantic.mypy"
+
+[tool.ruff]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
