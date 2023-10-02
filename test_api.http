@@ -1,0 +1,30 @@
+# Tests for FastAPI endpoints
+
+### Get list of categories
+GET http://localhost:8000/v1/categories
+Accept: application/json
+
+### Get list of genders
+GET http://localhost:8000/v1/genders
+Accept: application/json
+
+### Get list of regions
+GET http://localhost:8000/v1/regions
+Accept: application/json
+
+### Get list of filters
+GET http://localhost:8000/v1/filters
+Content-Type: application/json
+Accept: application/json
+
+### Search creators with no filters
+POST http://localhost:8000/v1/search_creators
+Content-Type: application/json
+Accept: application/json
+
+{
+  "filters": {
+    "gender": null,
+    "categories": []
+  }
+}
