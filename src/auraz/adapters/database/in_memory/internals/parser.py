@@ -19,7 +19,7 @@ from auraz.core.domain.entities.user import User
 from auraz.core.domain.values.email import AurazEmail
 from auraz.core.domain.values.id import ID
 from auraz.core.domain.values.localized_str import LStr
-from auraz.core.domain.values.password import AurazRawPassword
+from auraz.core.domain.values.password import AurazEncryptedPassword
 from auraz.core.domain.values.tiktok import TikTokUsername
 from auraz.core.domain.values.url import URL
 from auraz.core.domain.values.username import AurazUsername
@@ -57,7 +57,7 @@ class Parser:
         return UserModel(
             id=data["id"],
             email=self.__parse_auraz_email(data["email"]),
-            raw_password=self.__parse_auraz_raw_password(data["raw_password"]),
+            encrypted_password=self.__parse_auraz_encrypted_password(data["encrypted_password"]),
         )
 
     def __parse_creator(self, data: dict) -> CreatorModel:
@@ -131,8 +131,8 @@ class Parser:
         return AurazUsername(data)
 
     @staticmethod
-    def __parse_auraz_raw_password(data: str) -> AurazRawPassword:
-        return AurazRawPassword(data)
+    def __parse_auraz_encrypted_password(data: str) -> AurazEncryptedPassword:
+        return AurazEncryptedPassword(data)
 
     @staticmethod
     def __parse_list_into_dict(

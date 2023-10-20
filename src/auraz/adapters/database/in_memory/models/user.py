@@ -3,13 +3,13 @@ from dataclasses import dataclass
 from auraz.adapters.database.in_memory.models.model import Model
 from auraz.core.domain.entities.user import User
 from auraz.core.domain.values.email import AurazEmail
-from auraz.core.domain.values.password import AurazRawPassword
+from auraz.core.domain.values.password import AurazEncryptedPassword
 
 
 @dataclass
 class UserModel(Model[User]):
     email: AurazEmail
-    raw_password: AurazRawPassword
+    encrypted_password: AurazEncryptedPassword
 
     def to_domain(self) -> User:
         return User(**self.__dict__)

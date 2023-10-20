@@ -5,6 +5,7 @@ from pydantic import model_serializer, model_validator
 from auraz.adapters.web.types.web_exchange import WebExchange, get_value_from_exchange_or_raise
 from auraz.core.domain.values.id import ID
 from auraz.ports.security import id_concealer
+from auraz.ports.security.access_token import Subject
 from auraz.ports.security.id_concealer import Code
 
 
@@ -17,9 +18,16 @@ class WebCode(WebExchange):
     def to_id(self) -> ID:
         return id_concealer.get().decode(self.value)
 
+    def to_subject(self) -> Subject:
+        return Subject(self.value)
+
     @classmethod
     def from_id(cls, identifier: ID):
         return WebCode.model_construct(value=id_concealer.get().encode(identifier))
+
+    @classmethod
+    def from_subject(cls, subject: Subject):
+        return WebCode.model_construct(value=Code(str(subject)))
 
     @model_serializer()
     def write(self) -> str:

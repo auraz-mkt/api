@@ -40,72 +40,72 @@
     {
       "id": 1,
       "email": "desfrutando.vida@test.com",
-      "raw_password": "00000000"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$jVHq3RvD2HtPSUkpZezdOw$LEFe3++4an8kMK5R4qQ+6Um6lIJnuzkxKyon3WSJTFI"
     },
     {
       "id": 2,
       "email": "tscarmo@test.com",
-      "raw_password": "00000001"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$fI8R4twbY8w5p3QOgdA6pw$2MnptIpiY2APSKpmVdyeHbMgnwsBk28KQ9vsxXWSfoI"
     },
     {
       "id": 3,
       "email": "colocanalista_@test.com",
-      "raw_password": "00000002"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$jVHq3RvD2HtPSUkpZezdOw$LEFe3++4an8kMK5R4qQ+6Um6lIJnuzkxKyon3WSJTFI"
     },
     {
       "id": 4,
       "email": "acazo33@test.com",
-      "raw_password": "00000003"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$n1PqfU/pHYPw/v8/hzAGAA$bdJW+hQGTeLcEXPYS5mEmIfv4sVW/DjmyJt0j38ilLk"
     },
     {
       "id": 5,
       "email": "arisegatto@test.com",
-      "raw_password": "00000004"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$k7LWmrOWUqrVGgMAIATAmA$H3L3h9ByvPldbFBUeesKxIqLFbNTn5zxcxXDy1ZO4C4"
     },
     {
       "id": 6,
       "email": "amandafavoreto@test.com",
-      "raw_password": "00000005"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$MWbMuZdyTmntfY8xhlBq7Q$1TqqVQDBB83zhfs7e7QgmBtYVXAB3c+Wn9GW88wFa4g"
     },
     {
       "id": 7,
       "email": "jaquelinezaninif@test.com",
-      "raw_password": "00000006"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$z7lXCkEIYaw15vx/rxVCSA$bQGxg8WcWIpaXUazS2wtpgVw9UD0Kfo5dX7yMxE8Sk4"
     },
     {
       "id": 8,
       "email": "gaelejose@test.com",
-      "raw_password": "00000007"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$DoHwfi9l7L1XSmmN8b733g$IgDZ4ONfdsr8Qz8NERCAt9ReOavQ3ulDVmJeTwkThJc"
     },
     {
       "id": 9,
       "email": "isacsiqeira@test.com",
-      "raw_password": "00000008"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$l9Jaq9U6B8D4H8P4X4uxNg$SZjPFFw8nCHdAb4iV/aBJlOdn4iD/NgS2fRRBpptOC4"
     },
     {
       "id": 10,
       "email": "anabeatriz.guedes@test.com",
-      "raw_password": "00000009"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$1DqHkBLiXEvpHaOU0hqjlA$+d/AHAB97JtzqJOPlAan+IzZyiMWXsmH7aPMAR3gYRM"
     },
     {
       "id": 11,
       "email": "bruna_thomasi@test.com",
-      "raw_password": "00000010"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$rjUGwJhTyllLyZmTEmIsBQ$/mu70hWZc9d7+cVD+lMpU3HxVl33egx0tXMJjGJCUfY"
     },
     {
       "id": 12,
       "email": "luanaamy_02@test.com",
-      "raw_password": "00000011"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$rfX+P4fwfo9xTqnVmvO+9w$odBZNPuzvWDaSPMwzWmpePiqmxgCPFs9zQktFpmrHF4"
     },
     {
       "id": 13,
       "email": "angelam.artecomoterapia@test.com",
-      "raw_password": "00000012"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$cO4d41zLGYOQUgqhdE4JwQ$dDkwCMhn5wenzwn04eOcXAkoLcFgztkb9PhLxT33T/M"
     },
     {
       "id": 14,
       "email": "dividindoleituras_@test.com",
-      "raw_password": "00000013"
+      "encrypted_password": "$argon2id$v=19$m=65536,t=3,p=4$cW7tfe89JyTEuFcqpdR6Dw$s9bpyKxghIPl7b6wAPOxjSndSCOnz+52SRJv3mOGHCQ"
     }
   ],
   "brands": [

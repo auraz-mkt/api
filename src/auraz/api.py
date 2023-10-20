@@ -36,11 +36,11 @@ async def _setup(api: FastAPI, settings: Settings):
 
     async with aiohttp.ClientSession() as session:
         clients = WebClientsDependencyInjector(session).build()
-        _security = SecurityDependencyInjector(settings).build()
+        security = SecurityDependencyInjector(settings).build()
         repositories = DatabaseInMemoryDependencyInjector(database_url).build()
         integrations = IntegrationsDependencyInjector(clients).build()
-        services = ServicesDependencyInjector(repositories, integrations).build()
-        routers = WebRouterDependencyInjector(repositories, integrations, services).build()
+        services = ServicesDependencyInjector(security, repositories, integrations).build()
+        routers = WebRouterDependencyInjector(security, repositories, integrations, services).build()
 
         _inject_routers(api, routers)
         yield

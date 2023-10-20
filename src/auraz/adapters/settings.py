@@ -2,7 +2,11 @@ import os
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
+from textwrap import wrap
+from typing import Annotated
 
+import regex
+from annotated_types import Predicate
 from pydantic import AliasChoices, Field
 from pydantic.networks import AnyHttpUrl, IPvAnyAddress
 from pydantic.types import PositiveInt
@@ -10,6 +14,23 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing_extensions import Literal
 
 from auraz.core.domain.values.url import URL
+
+BASE64_PATTERN = regex.compile(
+    r"""
+    (?:-{5}BEGIN\s(?:PUBLIC|EC\sPRIVATE)\sKEY-{5})?    # Header
+    (?:[A-Za-z0-9+/]{4})+                              # Multiple length 4 blocks
+    (?:[A-Za-z0-9+/]{2}==)?                            # Optional end with `==`
+    (?:-{5}END\s(?:PUBLIC|EC\sPRIVATE)\sKEY-{5})?      # Footer
+    """,
+    regex.VERBOSE,
+)
+
+
+def is_base64(value: str) -> bool:
+    return bool(regex.fullmatch(BASE64_PATTERN, value))
+
+
+Base64 = Annotated[str, Predicate(is_base64)]
 
 
 class Mode(Enum):
@@ -56,6 +77,26 @@ class SecuritySettings(AurazSettings):
     model_config = SettingsConfigDict(env_prefix="sec_")
 
     webcode_alphabet: str
+    public_key: Base64
+    private_key: Base64
+
+    @property
+    def parsed_public_key(self):
+        key = [
+            "-----BEGIN PUBLIC KEY-----",
+            *wrap(self.public_key, width=64),
+            "-----END PUBLIC KEY-----",
+        ]
+        return "\n".join(key)
+
+    @property
+    def parsed_private_key(self):
+        key = [
+            "-----BEGIN PRIVATE KEY-----",
+            *wrap(self.private_key, width=64),
+            "-----END PRIVATE KEY-----",
+        ]
+        return "\n".join(key)
 
 
 class DatabaseSettings(AurazSettings):
