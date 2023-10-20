@@ -34,11 +34,11 @@ def _inject_exception_handlers(api: FastAPI, web_exception_handlers: WebExceptio
 async def _setup(api: FastAPI, settings: Settings):
     async with aiohttp.ClientSession() as session:
         clients = WebClientsDependencyInjector(session).build()
-        _security = SecurityDependencyInjector(settings).build()
+        security = SecurityDependencyInjector(settings).build()
         repositories = DatabaseInMemoryDependencyInjector(settings).build()
         integrations = IntegrationsDependencyInjector(clients).build()
-        services = ServicesDependencyInjector(repositories, integrations).build()
-        routers = WebRouterDependencyInjector(repositories, integrations, services).build()
+        services = ServicesDependencyInjector(security, repositories, integrations).build()
+        routers = WebRouterDependencyInjector(security, repositories, integrations, services).build()
 
         _inject_routers(api, routers)
         yield

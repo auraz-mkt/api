@@ -28,3 +28,35 @@ Accept: application/json
     "categories": []
   }
 }
+
+### Login existing user
+POST http://localhost:8000/v1/auth/login
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+
+username = desfrutando.vida@test.com &
+password = 00000001
+
+### Get user info for logged existing user
+GET http://localhost:8000/v1/auth/user
+Accept: application/json
+
+### Logout existing user
+POST http://localhost:8000/v1/auth/logout
+Accept: application/json
+
+### Signup new user
+POST http://localhost:8000/v1/auth/signup
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+
+username = bot@auraz.com.br &
+password = 12345678
+
+### Get user info for logged new user
+GET http://localhost:8000/v1/auth/user
+Accept: application/json
+
+### Logout new user
+POST http://localhost:8000/v1/auth/logout
+Accept: application/json
