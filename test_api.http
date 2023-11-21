@@ -60,3 +60,19 @@ Accept: application/json
 ### Logout new user
 POST http://localhost:8000/v1/auth/logout
 Accept: application/json
+
+### List contacts
+GET http://localhost:8000/v1/contacts
+Accept: application/json
+
+### Create contact
+POST http://localhost:8000/v1/contacts
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "test@test.com",
+  "name": "Tester",
+  "type": "creator",
+  "message": "Testing contact"
+}

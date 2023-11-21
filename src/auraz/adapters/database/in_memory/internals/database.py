@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 from auraz.adapters.database.in_memory.internals.storage import Storage
 from auraz.core.domain.entities.attribute import Category, Gender, Region
+from auraz.core.domain.entities.contact import Contact
 from auraz.core.domain.entities.creator import Creator
 from auraz.core.domain.entities.user import User
 
@@ -16,5 +17,6 @@ class Attributes:
 @dataclass
 class Database:
     attributes: Attributes
+    contacts: Storage[Contact]
     users: Storage[User]
     creators: Storage[Creator]

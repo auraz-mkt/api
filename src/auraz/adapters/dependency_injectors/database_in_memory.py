@@ -1,10 +1,12 @@
 from auraz.adapters.database.in_memory.base_dao import BaseDAO
 from auraz.adapters.database.in_memory.internals.parser import Parser
 from auraz.adapters.database.in_memory.models.attribute import CategoryModel, GenderModel, RegionModel
+from auraz.adapters.database.in_memory.models.contact import ContactModel
 from auraz.adapters.database.in_memory.models.creator import CreatorModel
 from auraz.adapters.database.in_memory.models.user import UserModel
 from auraz.adapters.settings import Settings
 from auraz.core.domain.entities.attribute import Category, Gender, Region
+from auraz.core.domain.entities.contact import Contact
 from auraz.core.domain.entities.creator import Creator
 from auraz.core.domain.entities.user import User
 from auraz.ports.dependency_injection.dependency_injector import DependencyInjector
@@ -34,6 +36,11 @@ class DatabaseInMemoryDependencyInjector(DependencyInjector[Repositories]):
                 item_type=Region,
                 model_type=RegionModel,
                 storage=database.attributes.regions,
+            ),
+            contacts=BaseDAO(
+                item_type=Contact,
+                model_type=ContactModel,
+                storage=database.contacts,
             ),
             users=BaseDAO(
                 item_type=User,

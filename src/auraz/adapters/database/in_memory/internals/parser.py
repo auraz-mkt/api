@@ -5,6 +5,7 @@ from typing import Callable
 from auraz.adapters.database.in_memory.internals.database import Attributes, Database
 from auraz.adapters.database.in_memory.internals.storage import Storage
 from auraz.adapters.database.in_memory.models.attribute import CategoryModel, GenderModel, RegionModel
+from auraz.adapters.database.in_memory.models.contact import ContactModel
 from auraz.adapters.database.in_memory.models.creator import (
     CreatorAttributesModel,
     CreatorModel,
@@ -13,6 +14,7 @@ from auraz.adapters.database.in_memory.models.creator import (
 from auraz.adapters.database.in_memory.models.model import Model, ModelType
 from auraz.adapters.database.in_memory.models.user import UserModel
 from auraz.core.domain.entities.attribute import Category, Gender, Region
+from auraz.core.domain.entities.contact import Contact, ContactType
 from auraz.core.domain.entities.creator import Creator
 from auraz.core.domain.entities.entity import EntityType
 from auraz.core.domain.entities.user import User
@@ -32,6 +34,9 @@ class Parser:
     def parse_database(self) -> Database:
         return Database(
             attributes=self.__parse_attributes(self.database_file["attributes"]),
+            contacts=Storage[Contact](
+                self.__parse_list_into_dict(self.database_file["contacts"], self.__parse_contact),
+            ),
             users=Storage[User](
                 self.__parse_list_into_dict(self.database_file["users"], self.__parse_user),
             ),
@@ -51,6 +56,15 @@ class Parser:
             regions=Storage[Region](
                 self.__parse_list_into_dict(data["regions"], self.__parse_region),
             ),
+        )
+
+    def __parse_contact(self, data: dict) -> ContactModel:
+        return ContactModel(
+            id=data["id"],
+            name=data["name"],
+            email=self.__parse_auraz_email(data["email"]),
+            type=self.__parse_contact_type(data["type"]),
+            message=data["message"],
         )
 
     def __parse_user(self, data: dict) -> UserModel:
@@ -133,6 +147,16 @@ class Parser:
     @staticmethod
     def __parse_auraz_encrypted_password(data: str) -> AurazEncryptedPassword:
         return AurazEncryptedPassword(data)
+
+    @staticmethod
+    def __parse_contact_type(data: str) -> ContactType:
+        match data:
+            case "creator":
+                return ContactType.CREATOR
+            case "brand":
+                return ContactType.BRAND
+            case _:
+                raise ValueError("")
 
     @staticmethod
     def __parse_list_into_dict(

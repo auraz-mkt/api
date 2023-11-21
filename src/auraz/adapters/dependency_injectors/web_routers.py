@@ -1,6 +1,7 @@
 from auraz.adapters.web.authenticator import Authenticator
 from auraz.adapters.web.routers.attributes_router import AttributesRouter
 from auraz.adapters.web.routers.auth_router import AuthRouter
+from auraz.adapters.web.routers.contacts_router import ContactsRouter
 from auraz.adapters.web.routers.creators_router import CreatorsRouter
 from auraz.adapters.web.routers.search_router import SearchRouter
 from auraz.core.domain.entities.attribute import AttributeName, Category, Gender, Region
@@ -45,6 +46,9 @@ class WebRouterDependencyInjector(DependencyInjector[WebRouters]):
                 AttributesRouter[Region](
                     name=AttributeName(singular="region", plural="regions"),
                     attributes=self.repositories.regions,
+                ),
+                ContactsRouter(
+                    self.repositories.contacts,
                 ),
                 CreatorsRouter(
                     self.repositories.creators,

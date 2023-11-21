@@ -36,6 +36,15 @@
     {"tag": "receitafit", "categories": [1]},
     {"tag": "whey", "categories": [1]}
   ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Auraz Bot",
+      "email": "auraz.mkt+test@gmail.com",
+      "type": "creator",
+      "message": "Entrando em contato com a Auraz"
+    }
+  ],
   "users": [
     {
       "id": 1,
