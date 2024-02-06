@@ -18,3 +18,9 @@ services:
     env_file:
       - ".env"
 
+  db:
+    image: "${DB_IMAGE}:${DB_VERSION}"
+    ports:
+      - "5432:5432"
+    env_file:
+      - ".env"

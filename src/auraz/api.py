@@ -5,7 +5,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from auraz.adapters.dependency_injectors.database_in_memory import DatabaseInMemoryDependencyInjector
+from auraz.adapters.dependency_injectors.database import DatabaseInjector
 from auraz.adapters.dependency_injectors.integrations import IntegrationsDependencyInjector
 from auraz.adapters.dependency_injectors.security import SecurityDependencyInjector
 from auraz.adapters.dependency_injectors.web_clients import WebClientsDependencyInjector
@@ -35,7 +35,7 @@ async def _setup(api: FastAPI, settings: Settings):
     async with aiohttp.ClientSession() as session:
         clients = WebClientsDependencyInjector(session).build()
         security = SecurityDependencyInjector(settings).build()
-        repositories = DatabaseInMemoryDependencyInjector(settings).build()
+        repositories = DatabaseInjector(settings).build()
         integrations = IntegrationsDependencyInjector(clients).build()
         services = ServicesDependencyInjector(security, repositories, integrations).build()
         routers = WebRouterDependencyInjector(security, repositories, integrations, services).build()

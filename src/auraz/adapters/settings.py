@@ -8,7 +8,7 @@ from typing import Annotated
 import regex
 from annotated_types import Predicate
 from pydantic import AliasChoices, Field
-from pydantic.networks import AnyHttpUrl, IPvAnyAddress
+from pydantic.networks import AnyHttpUrl, IPvAnyAddress, PostgresDsn
 from pydantic.types import PositiveInt
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing_extensions import Literal
@@ -31,6 +31,11 @@ def is_base64(value: str) -> bool:
 
 
 Base64 = Annotated[str, Predicate(is_base64)]
+
+
+class DatabaseType(Enum):
+    IN_MEMORY = "in_memory"
+    RELATIONAL = "relational"
 
 
 class Mode(Enum):
@@ -102,12 +107,23 @@ class SecuritySettings(AurazSettings):
 class DatabaseSettings(AurazSettings):
     model_config = SettingsConfigDict(env_prefix="db_")
 
-    connection: Path
+    connection: Path | PostgresDsn
 
     @property
     def url(self) -> URL:
         if isinstance(self.connection, Path):
             return URL(os.path.abspath(str(self.connection)))
+        if isinstance(self.connection, PostgresDsn):
+            return URL(str(self.connection))
+
+        raise ValueError(f"Database connection is invalid {self.connection}")
+
+    @property
+    def type(self) -> DatabaseType:
+        if isinstance(self.connection, Path):
+            return DatabaseType.IN_MEMORY
+        if isinstance(self.connection, PostgresDsn):
+            return DatabaseType.RELATIONAL
 
         raise ValueError(f"Database connection is invalid {self.connection}")
 
